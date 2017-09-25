@@ -1,5 +1,5 @@
 from workflow import ICON_INFO
-from config import COIN_ICON
+from config import COIN_ICON, APP_ICON
 from workflow.background import run_in_background, is_running
 from bitcoin_currency_exception import NoResultException
 from collections import OrderedDict
@@ -24,8 +24,12 @@ def get_currency_subtitle(currency):
     return u', '.join(subtitle)
 
 
-def get_currency_icon(currency):
+def get_currency_icon(currency=None):
     return COIN_ICON
+
+
+def get_app_icon():
+    return APP_ICON
 
 
 def search_key_for_currencies(currency):
@@ -98,37 +102,41 @@ def show_basic_info(wf, query=None):
 
 def show_help(wf, query=None):
     wf.add_item(
-        title="bc Bitcoin", subtitle="Search the current status of Bitcoin.")
+        title="bc Bitcoin",
+        subtitle="Search the current status of Bitcoin.",
+        icon=get_currency_icon())
     wf.add_item(
         title="bc Bitcoin 15",
-        subtitle="Search how much is 15 Bitcoins in US dollars.")
+        subtitle="Search how much are 15 Bitcoins in US dollars.",
+        icon=get_currency_icon())
     wf.add_item(
-        title="bc Bitcoin Ethereum 2.5",
-        subtitle="Search how much is 2.5 Bitcoins in Ethereum.")
+        title="bc Bitcoin:Ethereum 2.5",
+        subtitle="Search how much are 2.5 Bitcoins in Ethereum.",
+        icon=get_currency_icon())
     wf.add_item(
         title="bcs",
         subtitle=
-        "Search the top 10 Crytocurrency with largest increasement in the past 7 days."
-    )
+        "Search the top 10 Crytocurrency with largest increasement in the past 7 days.",
+        icon=get_currency_icon())
     wf.add_item(
         title="bcs dec",
         subtitle=
-        "Search the top 10 Crytocurrency with largest decline in the past 7 days."
-    )
+        "Search the top 10 Crytocurrency with largest decline in the past 7 days.",
+        icon=get_currency_icon())
     wf.add_item(
         title="bcs inc 5",
         subtitle=
-        "Search the top 5 Crytocurrency with largest increasement in the past 7 days."
-    )
+        "Search the top 5 Crytocurrency with largest increasement in the past 7 days.",
+        icon=get_currency_icon())
     wf.add_item(
         title="bcs inc 7 1h",
         subtitle=
-        "Search the top 7 Crytocurrency with largest increasement in the past 1 hour."
-    )
+        "Search the top 7 Crytocurrency with largest increasement in the past 1 hour.",
+        icon=get_currency_icon())
     wf.add_item(
         title="bcs inc 3 24h",
         subtitle=
-        "Search the top 3 Crytocurrency with largest increasement in the past 24 hours."
-    )
+        "Search the top 3 Crytocurrency with largest increasement in the past 24 hours.",
+        icon=get_currency_icon())
     wf.send_feedback()
     return 0
