@@ -1,8 +1,8 @@
 from bitcoin_currency_exception import InputFormatException
-from basic_info import get_currencies_info
+from basic_info import get_currencies_info, get_currency_icon
 
 
-def show_currency(wf, src, dest='usd', quanity=1):
+def show_currency(wf, src, dest, quanity=1):
     src_currencies = get_currencies_info(wf, src)
     dest_currencies = get_currencies_info(wf, dest)
     for sc in src_currencies:
@@ -12,7 +12,8 @@ def show_currency(wf, src, dest='usd', quanity=1):
                     title="{} -> {}".format(sc['name'], dc['name']),
                     subtitle="{} {} = {} {}".format(quanity, sc['name'],
                                                     calculate(sc, dc, quanity),
-                                                    dc['name']))
+                                                    dc['name']),
+                    icon=get_currency_icon(sc))
     wf.send_feedback()
     return 0
 

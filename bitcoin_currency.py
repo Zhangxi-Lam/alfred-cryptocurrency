@@ -44,10 +44,14 @@ def parse_params(args_str):
                 args["function"] = SHOW_BASIC_INFO
                 args["coin_1"] = args_params[0]
                 return args
-        elif len(args) == 2:
+        elif len(args_params) == 2:
             args["function"] = SHOW_CURRENCY
             args["coin_1"] = args_params[0]
-            args["quanity"] = args_params[1]
+            args["coin_2"] = "usd"
+            try:
+                args["quanity"] = float(args_params[1])
+            except ValueError:
+                args["function"] = ERROR
             return args
         else:
             args["function"] = ERROR
