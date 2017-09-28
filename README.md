@@ -6,10 +6,10 @@ A workflow for [Alfred 3](http://www.alfredapp.com) that provides information ab
 ![Usage Help](resources/help-resize.gif)
 
 ### Show Cryptcurrency Basic Info
-![Usage Basic Info](resources/bitcoin-resize.gif)
+![Usage Basic Info](resources/bitcoin-resize-480px.gif)
 
 ### Show How Much Is N Bitcoins
-![Usage Bitcoin](resources/bitcoin-5-resize.gif)
+![Usage Bitcoin](resources/bitcoin-5-resize-480px.gif)
 
 
 ### Show how Much is N Bitcoins in Ethereum
