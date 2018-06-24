@@ -10,7 +10,7 @@ def get_recent_currencies_info():
 
     # Get the information of the top 100 most popular currencies from the
     # website
-    url = "https://api.coinmarketcap.com/v1/ticker/"
+    url = "https://api.coinmarketcap.com/v1/ticker/?start=0&limit=1000"
     r = web.get(url)
 
     # Throw an error if request failed
